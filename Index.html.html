@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ma Forme — Programme</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Ma Forme">
+<meta name="theme-color" content="#14675A">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACsElEQVR4nO3dQU5iQRRAUey4BN2cLkCX1Bvo1fUmekBCCHqBQfN/vXjOSMOAqpdL8QM/+vTy8XaA7/zaewGsSxwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZCed3nWv7//nP/6+vm+yzIWt/uUnjb+p8MXGz4nkZNFprTp28qVPd989OdYZ0rbxXHPrvSx1JRckJI2iuP+2H/y4bHalJwcJHGQxEESB2mfT0jvcbrmev18P/95vxX9H4P2tWIcVy7Fjw+tOcqbbu5rNSPfVtYc5XUT1zwyjsO0Wc9a7cnUONjA4DimvBynrPOrwXHwaOIgiYMkDpI4SOIgiYMkDpI4SOIgiYO04v0c95v7tcUITg6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEizv7If8bcY5t5X4OQgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDtLgOEZ8sXKYs86vBsfBo02NY9bLcdZqT0bGMXHWE9e84v0cxzl+exvExBGf3NzXand+rBjH0XkHo5u4MGhfI99W2IY4SOIgiYO0URz3X3ktfo32UKtNyclB2i6Oe2L/ycfG0VJT2vTkuL4rZRytM6Wnl4+3zZ7s5OKjQFl8a/cp7RMHI7ggJYmDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImD9A8fLHSfeXxM1wAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACsElEQVR4nO3dQU5iQRRAUey4BN2cLkCX1Bvo1fUmekBCCHqBQfN/vXjOSMOAqpdL8QM/+vTy8XaA7/zaewGsSxwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZDEQRIHSRwkcZCed3nWv7//nP/6+vm+yzIWt/uUnjb+p8MXGz4nkZNFprTp28qVPd989OdYZ0rbxXHPrvSx1JRckJI2iuP+2H/y4bHalJwcJHGQxEESB2mfT0jvcbrmev18P/95vxX9H4P2tWIcVy7Fjw+tOcqbbu5rNSPfVtYc5XUT1zwyjsO0Wc9a7cnUONjA4DimvBynrPOrwXHwaOIgiYMkDpI4SOIgiYMkDpI4SOIgiYO04v0c95v7tcUITg6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEizv7If8bcY5t5X4OQgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDtLgOEZ8sXKYs86vBsfBo02NY9bLcdZqT0bGMXHWE9e84v0cxzl+exvExBGf3NzXand+rBjH0XkHo5u4MGhfI99W2IY4SOIgiYO0URz3X3ktfo32UKtNyclB2i6Oe2L/ycfG0VJT2vTkuL4rZRytM6Wnl4+3zZ7s5OKjQFl8a/cp7RMHI7ggJYmDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImDJA6SOEjiIImD9A8fLHSfeXxM1wAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F6F2; --card:#FFFFFF; --ink:#22271F; --soft:#5D645B; --line:#E4E6DF;
+  --brand:#14675A; --amber:#E8892B;
+  --push:#CF6A45; --push-bg:#FBEDE7;
+  --pull:#3B7BA6; --pull-bg:#E9F1F7;
+  --legs:#4F8C4A; --legs-bg:#EAF3E8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:660px;margin:0 auto;padding:0 18px}
+h1,h2,h3,.disp{font-family:'Bricolage Grotesque','SF Pro Display',-apple-system,system-ui,sans-serif;letter-spacing:-.01em;line-height:1.08}
+
+/* HERO */
+.hero{padding:52px 0 30px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+.hero h1{font-size:clamp(36px,9vw,52px);font-weight:800;margin:14px 0 16px}
+.hero h1 em{font-style:normal;color:var(--brand)}
+.lede{font-size:18px;color:var(--soft);max-width:46ch}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 15px;font-size:14px;font-weight:600}
+.stat span{display:block;font-size:12px;font-weight:500;color:var(--soft);letter-spacing:.03em}
+
+/* WEEK */
+.week{background:var(--brand);color:#EAF3F0;border-radius:20px;padding:22px 20px;margin:8px 0 30px}
+.week h2{font-size:20px;font-weight:700;color:#fff;margin-bottom:4px}
+.week p{font-size:15px;color:#BBD8D1;margin-bottom:16px}
+.days{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.day-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);border-radius:13px;padding:12px 8px;text-align:center;text-decoration:none;color:#fff;transition:background .15s}
+.day-pill:hover{background:rgba(255,255,255,.16)}
+.day-pill b{display:block;font-family:'Bricolage Grotesque';font-size:17px;font-weight:700}
+.day-pill small{font-size:11.5px;color:#BBD8D1}
+.week .rest{margin-top:14px;font-size:13.5px;color:#A9CEC6}
+
+/* NAV sticky */
+.nav{position:sticky;top:0;z-index:20;background:rgba(245,246,242,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:9px 0}
+.nav .wrap{display:flex;gap:8px}
+.nav a{flex:1;text-align:center;text-decoration:none;font-weight:600;font-size:12.5px;letter-spacing:-.01em;white-space:nowrap;padding:8px 3px;border-radius:10px;color:var(--soft);border:1px solid transparent}
+.nav a.w:hover{color:var(--amber);border-color:var(--amber)}
+.nav a.p:hover{color:var(--push);border-color:var(--push)}
+.nav a.b:hover{color:var(--pull);border-color:var(--pull)}
+.nav a.l:hover{color:var(--legs);border-color:var(--legs)}
+
+/* SESSION */
+.session{padding:38px 0 8px}
+.shead{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+.snum{font-family:'Bricolage Grotesque';font-weight:800;font-size:15px;color:#fff;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.shead h2{font-size:26px;font-weight:800}
+.starget{font-size:14.5px;color:var(--soft);margin:0 0 18px 54px}
+.p .snum{background:var(--push)} .p h2{color:var(--push)}
+.b .snum{background:var(--pull)} .b h2{color:var(--pull)}
+.l .snum{background:var(--legs)} .l h2{color:var(--legs)}
+.w .snum{background:var(--amber)} .w h2{color:#C9761E}
+.w .ill{background:#FBEEDC}
+.step{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:13px}
+.step-n{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--amber);color:#fff;font-family:'Bricolage Grotesque';font-weight:700;display:flex;align-items:center;justify-content:center;font-size:15px}
+.step h4{font-family:'Bricolage Grotesque';font-size:17px;font-weight:700;margin-bottom:5px}
+.step p{font-size:14.5px;color:var(--soft);margin-bottom:6px}
+.step .cues{margin-top:4px}
+.chip.warmday{color:#C9761E;border-color:#F0D6A8;background:#FBEEDC}
+
+.warm{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:12px;padding:13px 15px;margin-bottom:20px;font-size:14.5px}
+.warm b{color:var(--amber)}
+
+/* EXERCISE CARD */
+.ex{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:16px}
+.ex-top{display:flex;gap:0}
+.ill{flex-shrink:0;width:118px;display:flex;align-items:center;justify-content:center;padding:12px}
+.p .ill{background:var(--push-bg)} .b .ill{background:var(--pull-bg)} .l .ill{background:var(--legs-bg)}
+.ill svg{width:100%;height:auto;display:block}
+.ex-body{padding:15px 16px;flex:1;min-width:0}
+.ex-name{font-family:'Bricolage Grotesque';font-size:19px;font-weight:700;line-height:1.15}
+.ex-num{font-size:12px;font-weight:700;letter-spacing:.05em;color:var(--soft);display:block;margin-bottom:3px}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.chip{font-size:13px;font-weight:600;padding:4px 10px;border-radius:8px;background:var(--paper);border:1px solid var(--line)}
+.chip.set{color:var(--brand);border-color:#CBE1DB;background:#EAF3F0}
+.cues{list-style:none;font-size:14px;color:var(--soft);margin-top:4px}
+.cues li{position:relative;padding-left:16px;margin-bottom:3px}
+.cues li:before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.demo{display:inline-flex;align-items:center;gap:7px;margin-top:12px;text-decoration:none;font-weight:600;font-size:14px;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 13px;transition:.15s}
+.demo:hover{border-color:var(--brand);color:var(--brand)}
+.demo svg{width:15px;height:15px}
+
+/* GENERIC INFO BLOCKS */
+.block{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 20px;margin-bottom:16px}
+.block h3{font-size:20px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.block h3 .dot{width:11px;height:11px;border-radius:50%;flex-shrink:0}
+.block p{font-size:15px;color:var(--soft);margin-bottom:10px}
+.block ul{list-style:none}
+.block ul li{position:relative;padding-left:20px;margin-bottom:9px;font-size:15px;color:var(--soft)}
+.block ul li:before{content:"→";position:absolute;left:0;color:var(--brand);font-weight:700}
+.block ul li b{color:var(--ink)}
+.sec-title{padding:34px 0 4px}
+.sec-title h2{font-size:24px;font-weight:800}
+
+footer{padding:34px 0 60px;text-align:center;color:var(--soft);font-size:13.5px}
+footer .heart{color:var(--push);font-size:16px}
+
+@media(max-width:430px){
+  .ex-top{flex-direction:column}
+  .ill{width:100%;height:120px;padding:10px}
+  .ill svg{width:auto;height:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+#langbtn{position:fixed;bottom:18px;right:16px;z-index:60;background:var(--brand);color:#fff;border:none;border-radius:999px;padding:11px 15px;font-family:'Inter',-apple-system,system-ui,sans-serif;font-weight:700;font-size:14px;box-shadow:0 5px 16px rgba(0,0,0,.22);cursor:pointer;display:flex;align-items:center;gap:7px;-webkit-tap-highlight-color:transparent}
+#langbtn:active{transform:scale(.95)}
+#langbtn svg{width:16px;height:16px}
+
+.apphead{padding:30px 0 8px}
+.apphead h1{font-family:'Bricolage Grotesque','SF Pro Display',-apple-system,system-ui,sans-serif;font-size:34px;font-weight:800;margin:8px 0 6px}
+.tagline{font-size:15px;color:var(--soft);margin-bottom:13px}
+.weekstrip{font-size:14px;color:var(--brand);font-weight:600;background:#EAF3F0;border:1px solid #CBE1DB;border-radius:12px;padding:10px 13px}
+.tabs{position:sticky;top:0;z-index:30;background:rgba(245,246,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:8px 0}
+.tabs .wrap{display:flex;gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs .wrap::-webkit-scrollbar{display:none}
+.tab{flex:1 1 auto;text-align:center;white-space:nowrap;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:-.02em;padding:9px 6px;border-radius:10px;color:var(--soft);border:1px solid var(--line);background:var(--card);cursor:pointer;transition:background .15s,color .15s;user-select:none}
+.tab.active{color:#fff;border-color:transparent}
+.tab.w.active{background:var(--amber)} .tab.p.active{background:var(--push)} .tab.b.active{background:var(--pull)} .tab.l.active{background:var(--legs)} .tab.c.active{background:var(--brand)}
+.panel{display:none}
+.panel.active{display:block;animation:fadein .25s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.conseils-h{font-family:'Bricolage Grotesque','SF Pro Display',-apple-system,system-ui,sans-serif;font-size:24px;font-weight:800;padding-top:34px;margin-bottom:6px}
+.mobgrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:6px 0 4px}
+.mob{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center}
+.mob .ill2{background:#FBEEDC;border-radius:10px;padding:6px;margin-bottom:9px;display:flex;align-items:center;justify-content:center}
+.mob .ill2 svg{width:58px;height:58px}
+.mob .mname{font-family:'Bricolage Grotesque','SF Pro Display',-apple-system,system-ui,sans-serif;font-weight:700;font-size:14px;line-height:1.15}
+.mob .mcount{font-size:12.5px;color:var(--soft);margin-top:3px}
+@media(prefers-reduced-motion:reduce){.panel.active{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="apphead">
+  <div class="wrap">
+    <div class="eyebrow">Remise en forme · Salle de sport</div>
+    <h1>Ma Forme</h1>
+    <p class="tagline">3 séances/semaine · genoux ménagés · pensé pour reprendre en douceur</p>
+    <div class="weekstrip">Lun Pousser · Mer Tirer · Ven Jambes — un jour de repos entre chaque</div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <div class="wrap">
+    <a class="tab w active" data-tab="echauffement">Échauff.</a>
+    <a class="tab p" data-tab="push">Pousser</a>
+    <a class="tab b" data-tab="pull">Tirer</a>
+    <a class="tab l" data-tab="legs">Jambes</a>
+    <a class="tab c" data-tab="conseils">Conseils</a>
+  </div>
+</nav>
+
+
+<!-- ================= ÉCHAUFFEMENT ================= -->
+<section class="session w panel active" id="echauffement">
+  <div class="wrap">
+    <div class="shead"><div class="snum">🔥</div><h2>Échauffement</h2></div>
+    <p class="starget">8 à 10 min · avant chaque séance · <b style="color:#C9761E">non négociable</b></p>
+    <div class="warm" style="border-left-color:#C9761E"><div>🛡️</div><div>À 55 ans, l'échauffement évite la grande majorité des blessures. Ces 10 minutes protègent tout le reste — on ne les saute jamais, même pressé. Un muscle froid se blesse, un muscle réveillé travaille.</div></div>
+
+    <div class="step"><div class="step-n">1</div><div>
+      <h4>Faire monter le moteur</h4>
+      <p><b>5 minutes</b> de vélo ou vélo elliptique tranquille. Le corps chaud = muscles souples et articulations lubrifiées. Doux pour les genoux.</p>
+    </div></div>
+
+    <div class="step"><div class="step-n">2</div><div>
+      <h4>Réveiller les articulations</h4>
+      <p>Quelques mouvements doux, sans charge (~2 min) :</p>
+    </div></div>
+    <div class="mobgrid">
+      <div class="mob"><div class="ill2"><svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="44" cy="30" r="6.5" fill="#2A2E2B" stroke="none"/><path d="M44 36 L44 62"/><path d="M38 82 L44 62 L50 82"/><path d="M44 44 L58 34"/><path d="M60 20 a13 13 0 1 0 9 5" stroke="#E8892B" stroke-width="3.6"/><path d="M64 21 L70 17 L72 24" stroke="#E8892B" stroke-width="3.6"/></svg></div><div class="mname">Cercles de bras</div><div class="mcount">10 avant · 10 arrière</div></div>
+      <div class="mob"><div class="ill2"><svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="50" r="16"/><circle cx="44" cy="48" r="2" fill="#2A2E2B" stroke="none"/><circle cx="56" cy="48" r="2" fill="#2A2E2B" stroke="none"/><path d="M44 57 q6 4 12 0"/><path d="M28 36 q22 -15 44 0" stroke="#E8892B" stroke-width="3.4"/><path d="M67 29 L73 35 L65 38" stroke="#E8892B" stroke-width="3.4"/><path d="M33 38 L27 33 L35 30" stroke="#E8892B" stroke-width="3.4"/></svg></div><div class="mname">Rotations de la tête</div><div class="mcount">5 de chaque côté</div></div>
+      <div class="mob"><div class="ill2"><svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="24" r="7" fill="#2A2E2B" stroke="none"/><path d="M50 31 L50 60"/><path d="M42 82 L50 60 L58 82"/><path d="M50 40 L34 46"/><path d="M50 40 L66 46"/><path d="M32 40 a8 8 0 1 1 -3 6" stroke="#E8892B" stroke-width="3"/><path d="M28 34 L32 40 L25 42" stroke="#E8892B" stroke-width="3"/><path d="M68 40 a8 8 0 1 0 3 6" stroke="#E8892B" stroke-width="3"/><path d="M72 34 L68 40 L75 42" stroke="#E8892B" stroke-width="3"/></svg></div><div class="mname">Rotations des épaules</div><div class="mcount">10 de chaque côté</div></div>
+      <div class="mob"><div class="ill2"><svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="20" r="6.5" fill="#2A2E2B" stroke="none"/><path d="M50 26 L50 48"/><rect x="40" y="48" width="20" height="9" rx="4"/><path d="M43 57 L38 82"/><path d="M57 57 L62 82"/><ellipse cx="50" cy="53" rx="21" ry="9" stroke="#E8892B" stroke-width="3" fill="none"/><path d="M71 49 L73 55 L65 55" stroke="#E8892B" stroke-width="3"/></svg></div><div class="mname">Rotations du bassin</div><div class="mcount">10 de chaque côté</div></div>
+      <div class="mob"><div class="ill2"><svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="50" cy="22" r="6.5" fill="#2A2E2B" stroke="none"/><path d="M50 28 L50 56"/><path d="M50 40 L38 50"/><path d="M50 40 L62 50"/><path d="M50 56 L45 80"/><path d="M50 56 L62 74"/><path d="M38 90 H72" stroke="#E8892B" stroke-width="3.4"/><path d="M45 84 L37 90 L45 96" stroke="#E8892B" stroke-width="3.4"/><path d="M66 84 L74 90 L66 96" stroke="#E8892B" stroke-width="3.4"/></svg></div><div class="mname">Balancier de jambe</div><div class="mcount">10 par jambe</div></div>
+    </div>
+
+    <div class="step"><div class="step-n">3</div><div>
+      <h4>Activer à l'élastique</h4>
+      <p>3 mouvements courts avec le petit élastique de la salle (~3 min). C'est ça qui « allume » les muscles stabilisateurs et blinde tes épaules et tes genoux avant de charger.</p>
+    </div></div>
+
+    <!-- band 1 : pull-apart -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="22" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 29 L50 58"/><path d="M42 84 L50 58 L58 84"/>
+          <path d="M50 40 L34 42"/><path d="M50 40 L66 42"/>
+          <path d="M34 42 q4 -5 8 0 q4 5 8 0 q4 -5 8 0" stroke="#E8892B" stroke-width="3"/>
+          <path d="M30 42 L24 42" stroke="#E8892B" stroke-width="4"/><path d="M28 37 L22 42 L28 47" stroke="#E8892B" stroke-width="4"/>
+          <path d="M70 42 L76 42" stroke="#E8892B" stroke-width="4"/><path d="M72 37 L78 42 L72 47" stroke="#E8892B" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">ÉLASTIQUE 1</span>
+        <div class="ex-name">Écarté à l'élastique (pull-apart)</div>
+        <div class="chips"><span class="chip set">2 séries × 15</span><span class="chip warmday">tous les jours</span></div>
+        <ul class="cues">
+          <li>Bras tendus devant, écarte les mains en tirant l'élastique vers la poitrine</li>
+          <li>Serre les omoplates, reviens en contrôle</li>
+          <li>Réveille les épaules et le haut du dos avant de pousser/tirer</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=band+pull+apart+élastique+épaules+échauffement"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- band 2 : external rotation -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="42" cy="22" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M42 29 L42 58"/><path d="M34 84 L42 58 L50 84"/>
+          <path d="M42 40 L52 48"/><path d="M52 48 L70 44"/>
+          <path d="M52 48 q6 -3 12 -2" stroke="#E8892B" stroke-width="3" fill="none" opacity="0"/>
+          <path d="M64 34 A16 16 0 0 1 72 46" stroke="#E8892B" stroke-width="4"/><path d="M60 36 L64 32 L69 35" stroke="#E8892B" stroke-width="4"/>
+          <path d="M70 44 q5 4 11 3" stroke="#E8892B" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">ÉLASTIQUE 2</span>
+        <div class="ex-name">Rotation externe de l'épaule</div>
+        <div class="chips"><span class="chip set">2 × 12 / bras</span><span class="chip warmday">surtout Push &amp; Pull</span></div>
+        <ul class="cues">
+          <li>Coude collé au corps, plié à 90°</li>
+          <li>Tourne l'avant-bras vers l'extérieur, lentement, puis reviens</li>
+          <li>Prépare la coiffe des rotateurs — la clé des épaules sans douleur</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=rotation+externe+épaule+élastique+coiffe+rotateurs"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- band 3 : hip abduction -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="22" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 29 L50 52"/><path d="M50 52 L38 82"/><path d="M50 52 L62 82"/>
+          <path d="M40 66 q10 5 20 0" stroke="#E8892B" stroke-width="3"/>
+          <path d="M36 84 L28 88" stroke="#E8892B" stroke-width="4"/><path d="M33 82 L26 88 L33 91" stroke="#E8892B" stroke-width="4"/>
+          <path d="M64 84 L72 88" stroke="#E8892B" stroke-width="4"/><path d="M67 82 L74 88 L67 91" stroke="#E8892B" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">ÉLASTIQUE 3</span>
+        <div class="ex-name">Abduction de hanche à l'élastique</div>
+        <div class="chips"><span class="chip set">2 séries × 15</span><span class="chip warmday">surtout Jambes</span></div>
+        <ul class="cues">
+          <li>Élastique juste au-dessus des genoux</li>
+          <li>Écarte les genoux contre la résistance (assis ou debout), ou fais quelques pas de côté</li>
+          <li>Active les fessiers = hanches et genoux stables et protégés</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=abduction+hanche+élastique+fessiers+échauffement"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ================= PUSH ================= -->
+<section class="session p panel" id="push">
+  <div class="wrap">
+    <div class="shead"><div class="snum">P</div><h2>Pousser</h2></div>
+    <p class="starget">Pectoraux · épaules · triceps</p>
+    <div class="warm"><div>🔥</div><div><b>Échauffement complet obligatoire</b> avant de commencer — surtout l'écarté et les rotations d'épaule à l'élastique. <a href="#echauffement" style="color:var(--amber);font-weight:600">Voir la section échauffement ↑</a></div></div>
+
+    <!-- 1 chest press -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="26" y1="30" x2="26" y2="80"/><line x1="20" y1="80" x2="40" y2="80"/>
+          <circle cx="34" cy="34" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M34 41 L34 62"/><path d="M34 47 L52 50 L68 50"/>
+          <rect x="68" y="42" width="6" height="18" rx="2" fill="#2A2E2B" stroke="none"/>
+          <path d="M54 72 H82" stroke="#CF6A45" stroke-width="4.5"/><path d="M76 66 L84 72 L76 78" stroke="#CF6A45" stroke-width="4.5"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 1</span>
+        <div class="ex-name">Développé poitrine à la machine</div>
+        <div class="chips"><span class="chip set">3 séries × 12</span><span class="chip">repos 90 s</span></div>
+        <ul class="cues">
+          <li>Assis, dos bien calé contre le dossier</li>
+          <li>Pousse les poignées vers l'avant sans bloquer les coudes</li>
+          <li>Reviens lentement, sens le pectoraux travailler</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=développé+poitrine+machine+technique"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 2 shoulder press -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="30" y1="40" x2="30" y2="82"/><line x1="24" y1="82" x2="44" y2="82"/>
+          <circle cx="50" cy="34" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 41 L50 64"/><path d="M50 47 L38 34 L38 24"/><path d="M50 47 L62 34 L62 24"/>
+          <rect x="34" y="18" width="8" height="6" rx="2" fill="#2A2E2B" stroke="none"/><rect x="58" y="18" width="8" height="6" rx="2" fill="#2A2E2B" stroke="none"/>
+          <path d="M74 40 V20" stroke="#CF6A45" stroke-width="4.5"/><path d="M68 26 L74 18 L80 26" stroke="#CF6A45" stroke-width="4.5"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 2</span>
+        <div class="ex-name">Développé épaules à la machine</div>
+        <div class="chips"><span class="chip set">3 séries × 12</span><span class="chip">repos 90 s</span></div>
+        <ul class="cues">
+          <li>Assis, pousse les poignées vers le haut</li>
+          <li>Mouvement lent, sans à-coups</li>
+          <li>Ne monte pas les épaules vers les oreilles</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=développé+épaules+machine+assis"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 3 pec deck -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="30" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 37 L50 64"/><line x1="34" y1="80" x2="66" y2="80"/>
+          <path d="M50 46 L34 52 L30 66"/><path d="M50 46 L66 52 L70 66"/>
+          <path d="M40 40 H60" stroke="#CF6A45" stroke-width="4.5"/>
+          <path d="M46 34 L38 40 L46 46" stroke="#CF6A45" stroke-width="4.5"/><path d="M54 34 L62 40 L54 46" stroke="#CF6A45" stroke-width="4.5"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 3</span>
+        <div class="ex-name">Écarté à la machine (pec deck)</div>
+        <div class="chips"><span class="chip set">3 séries × 15</span><span class="chip">repos 60 s</span></div>
+        <ul class="cues">
+          <li>Rapproche les poignées devant toi, coudes légèrement fléchis</li>
+          <li>Serre les pectoraux au centre, puis reviens en contrôle</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=pec+deck+écarté+machine"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 4 lateral raise -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="28" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 35 L50 66"/><path d="M42 88 L50 66 L58 88"/>
+          <path d="M50 44 L34 40 L26 48"/><path d="M50 44 L66 40 L74 48"/>
+          <rect x="22" y="46" width="9" height="5" rx="2" fill="#2A2E2B" stroke="none"/><rect x="69" y="46" width="9" height="5" rx="2" fill="#2A2E2B" stroke="none"/>
+          <path d="M20 40 L26 32 L32 40" stroke="#CF6A45" stroke-width="4"/><path d="M68 40 L74 32 L80 40" stroke="#CF6A45" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 4</span>
+        <div class="ex-name">Élévations latérales (haltères)</div>
+        <div class="chips"><span class="chip set">3 séries × 15</span><span class="chip">repos 60 s</span><span class="chip">léger</span></div>
+        <ul class="cues">
+          <li>Debout, monte les bras sur les côtés jusqu'à l'horizontale</li>
+          <li>Haltères légers — c'est un exercice de finition, pas de force</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=élévations+latérales+haltères+débutant"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 5 triceps pushdown -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="66" y1="12" x2="66" y2="34"/><line x1="56" y1="34" x2="76" y2="34"/>
+          <circle cx="44" cy="30" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M44 37 L44 66"/><path d="M40 88 L44 66 L50 88"/>
+          <path d="M44 46 L58 44 L62 60"/>
+          <path d="M78 44 V70" stroke="#CF6A45" stroke-width="4.5"/><path d="M72 64 L78 72 L84 64" stroke="#CF6A45" stroke-width="4.5"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 5</span>
+        <div class="ex-name">Extension triceps à la poulie (corde)</div>
+        <div class="chips"><span class="chip set">3 séries × 15</span><span class="chip">repos 60 s</span></div>
+        <ul class="cues">
+          <li>Coudes collés au corps, pousse la corde vers le bas</li>
+          <li>Tends bien les bras en bas, remonte lentement</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=extension+triceps+poulie+corde"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ================= PULL ================= -->
+<section class="session b panel" id="pull">
+  <div class="wrap">
+    <div class="shead"><div class="snum">T</div><h2>Tirer</h2></div>
+    <p class="starget">Dos · biceps · arrière des épaules</p>
+    <div class="warm"><div>🔥</div><div><b>Échauffement complet obligatoire</b> avant d'attaquer — surtout l'écarté et les rotations d'épaule à l'élastique pour préparer le dos. <a href="#echauffement" style="color:var(--amber);font-weight:600">Voir la section échauffement ↑</a></div></div>
+
+    <!-- 1 lat pulldown -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="30" y1="14" x2="70" y2="14"/>
+          <circle cx="50" cy="40" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 47 L50 72"/><line x1="36" y1="86" x2="64" y2="86"/>
+          <path d="M50 52 L40 28 L36 16"/><path d="M50 52 L60 28 L64 16"/>
+          <path d="M80 30 V54" stroke="#3B7BA6" stroke-width="4.5"/><path d="M74 48 L80 56 L86 48" stroke="#3B7BA6" stroke-width="4.5"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 1</span>
+        <div class="ex-name">Tirage vertical à la poulie</div>
+        <div class="chips"><span class="chip set">3 séries × 12</span><span class="chip">repos 90 s</span></div>
+        <ul class="cues">
+          <li>Assis, tire la barre vers le haut de la poitrine</li>
+          <li>Descends les épaules, serre les omoplates</li>
+          <li>Remonte la barre lentement, bras tendus</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=tirage+vertical+poulie+lat+pulldown"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 2 seated row -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="40" cy="34" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M40 41 L40 66"/><line x1="26" y1="80" x2="52" y2="80"/><line x1="40" y1="66" x2="60" y2="66"/>
+          <path d="M40 47 L58 50 L74 50"/><rect x="74" y="44" width="6" height="12" rx="2" fill="#2A2E2B" stroke="none"/>
+          <path d="M70 68 H44" stroke="#3B7BA6" stroke-width="4.5"/><path d="M50 62 L42 68 L50 74" stroke="#3B7BA6" stroke-width="4.5"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 2</span>
+        <div class="ex-name">Rowing assis à la poulie</div>
+        <div class="chips"><span class="chip set">3 séries × 12</span><span class="chip">repos 90 s</span></div>
+        <ul class="cues">
+          <li>Dos droit, tire la poignée vers le ventre</li>
+          <li>Ramène les coudes en arrière, serre le dos</li>
+          <li>Ne te penche pas en arrière, reste stable</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=rowing+assis+poulie+machine+dos"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 3 reverse pec deck -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="30" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 37 L50 64"/><line x1="34" y1="80" x2="66" y2="80"/>
+          <path d="M50 46 L32 46 L26 58"/><path d="M50 46 L68 46 L74 58"/>
+          <path d="M40 40 L30 34" stroke="#3B7BA6" stroke-width="4"/><path d="M36 30 L28 33 L32 41" stroke="#3B7BA6" stroke-width="4"/>
+          <path d="M60 40 L70 34" stroke="#3B7BA6" stroke-width="4"/><path d="M64 30 L72 33 L68 41" stroke="#3B7BA6" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 3</span>
+        <div class="ex-name">Oiseau à la machine (reverse)</div>
+        <div class="chips"><span class="chip set">3 séries × 15</span><span class="chip">repos 60 s</span></div>
+        <ul class="cues">
+          <li>Écarte les bras vers l'arrière, coudes hauts</li>
+          <li>Travaille l'arrière des épaules et le haut du dos</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=reverse+pec+deck+oiseau+machine"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 4 biceps curl -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="26" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 33 L50 64"/><path d="M42 88 L50 64 L58 88"/>
+          <path d="M50 42 L40 56 L50 62"/><rect x="46" y="58" width="10" height="5" rx="2" fill="#2A2E2B" stroke="none"/>
+          <path d="M30 60 A16 16 0 0 1 40 44" stroke="#3B7BA6" stroke-width="4"/><path d="M34 44 L40 42 L42 50" stroke="#3B7BA6" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 4</span>
+        <div class="ex-name">Curl biceps (haltères)</div>
+        <div class="chips"><span class="chip set">3 séries × 12</span><span class="chip">repos 60 s</span></div>
+        <ul class="cues">
+          <li>Coudes fixes le long du corps, monte les haltères</li>
+          <li>Descends lentement, bras presque tendus</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=curl+biceps+haltères+debout"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 5 hammer curl -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="26" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 33 L50 64"/><path d="M42 88 L50 64 L58 88"/>
+          <path d="M50 42 L38 54 L48 62"/><rect x="43" y="50" width="5" height="14" rx="2" fill="#2A2E2B" stroke="none"/>
+          <path d="M28 62 A18 18 0 0 1 38 44" stroke="#3B7BA6" stroke-width="4"/><path d="M32 44 L38 42 L41 50" stroke="#3B7BA6" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 5</span>
+        <div class="ex-name">Curl marteau (haltères)</div>
+        <div class="chips"><span class="chip set">3 séries × 15</span><span class="chip">repos 60 s</span></div>
+        <ul class="cues">
+          <li>Comme le curl, mais paumes face à face (prise marteau)</li>
+          <li>Travaille l'avant-bras et l'épaisseur du bras</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=curl+marteau+haltères"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ================= LEGS ================= -->
+<section class="session l panel" id="legs">
+  <div class="wrap">
+    <div class="shead"><div class="snum">J</div><h2>Jambes</h2></div>
+    <p class="starget">Cuisses · ischios · mollets · fessiers — <b style="color:var(--legs)">genoux ménagés</b></p>
+    <div class="warm"><div>🔥</div><div><b>Échauffement complet obligatoire</b> — surtout l'abduction de hanche à l'élastique + 5 min de vélo pour préparer les genoux en douceur. <a href="#echauffement" style="color:var(--amber);font-weight:600">Voir la section échauffement ↑</a></div></div>
+
+    <!-- 1 leg press -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="40" x2="18" y2="72"/><line x1="12" y1="72" x2="30" y2="72"/>
+          <circle cx="26" cy="40" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M26 47 L26 62"/><path d="M26 58 L48 54 L64 60"/>
+          <rect x="64" y="46" width="8" height="26" rx="2" fill="#2A2E2B" stroke="none"/>
+          <path d="M62 82 H84" stroke="#4F8C4A" stroke-width="4.5"/><path d="M78 76 L86 82 L78 88" stroke="#4F8C4A" stroke-width="4.5"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 1</span>
+        <div class="ex-name">Presse à cuisses (leg press)</div>
+        <div class="chips"><span class="chip set">3 séries × 15</span><span class="chip">repos 90 s</span><span class="chip" style="color:var(--legs);border-color:#BEDDBB;background:var(--legs-bg)">genoux : mi-amplitude</span></div>
+        <ul class="cues">
+          <li>Ne descends pas trop bas — arrête vers 90° aux genoux</li>
+          <li>Pousse avec les talons, ne bloque pas les genoux en haut</li>
+          <li>Aucune douleur : si ça pince, réduis l'amplitude</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=presse+à+cuisses+leg+press+technique"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 2 leg curl -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="24" cy="52" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M31 52 L60 52"/><path d="M60 52 L74 60"/><rect x="70" y="58" width="10" height="5" rx="2" fill="#2A2E2B" stroke="none"/>
+          <line x1="20" y1="60" x2="66" y2="60" stroke="#2A2E2B" stroke-width="2" opacity=".4"/>
+          <path d="M78 54 A16 16 0 0 1 70 40" stroke="#4F8C4A" stroke-width="4"/><path d="M74 40 L70 38 L67 45" stroke="#4F8C4A" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 2</span>
+        <div class="ex-name">Leg curl (ischio-jambiers)</div>
+        <div class="chips"><span class="chip set">3 séries × 15</span><span class="chip">repos 90 s</span></div>
+        <ul class="cues">
+          <li>Allongé ou assis, ramène le talon vers les fesses</li>
+          <li>Mouvement lent — travaille l'arrière de la cuisse</li>
+          <li>Équilibre le genou en renforçant l'arrière</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=leg+curl+ischio+jambiers+machine"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 3 abductor -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="28" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 35 L50 58"/><line x1="34" y1="58" x2="66" y2="58"/>
+          <path d="M42 58 L30 78"/><path d="M58 58 L70 78"/>
+          <path d="M32 84 L26 90" stroke="#4F8C4A" stroke-width="4"/><path d="M30 82 L24 88 L31 90" stroke="#4F8C4A" stroke-width="4"/>
+          <path d="M68 84 L74 90" stroke="#4F8C4A" stroke-width="4"/><path d="M70 82 L76 88 L69 90" stroke="#4F8C4A" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 3</span>
+        <div class="ex-name">Abducteurs à la machine</div>
+        <div class="chips"><span class="chip set">3 séries × 15</span><span class="chip">repos 60 s</span></div>
+        <ul class="cues">
+          <li>Assis, écarte les genoux vers l'extérieur contre la résistance</li>
+          <li>Renforce les fessiers et stabilise les hanches — doux pour les genoux</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=machine+abducteurs+fessiers"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 4 calf raise -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="50" cy="24" r="7" fill="#2A2E2B" stroke="none"/>
+          <path d="M50 31 L50 62"/><path d="M50 62 L44 82"/><path d="M50 62 L56 82"/>
+          <path d="M40 84 L44 82"/><path d="M56 82 L60 84"/>
+          <path d="M74 44 V22" stroke="#4F8C4A" stroke-width="4.5"/><path d="M68 28 L74 20 L80 28" stroke="#4F8C4A" stroke-width="4.5"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 4</span>
+        <div class="ex-name">Extension mollets</div>
+        <div class="chips"><span class="chip set">3 séries × 20</span><span class="chip">repos 45 s</span></div>
+        <ul class="cues">
+          <li>Monte sur la pointe des pieds, le plus haut possible</li>
+          <li>Redescends lentement, bien étirer en bas</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=extension+mollets+machine+calf"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+
+    <!-- 5 plank -->
+    <div class="ex"><div class="ex-top">
+      <div class="ill">
+        <svg viewBox="0 0 100 100" fill="none" stroke="#2A2E2B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="16" y1="72" x2="84" y2="72" opacity=".3" stroke-width="2.5"/>
+          <circle cx="26" cy="52" r="6.5" fill="#2A2E2B" stroke="none"/>
+          <path d="M31 55 L74 66"/>
+          <path d="M34 56 L30 72"/><path d="M70 64 L78 72"/><path d="M30 72 L36 72"/>
+          <path d="M46 56 L52 42" stroke="#4F8C4A" stroke-width="4"/><path d="M47 46 L52 40 L57 46" stroke="#4F8C4A" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="ex-body">
+        <span class="ex-num">EXERCICE 5</span>
+        <div class="ex-name">Gainage (planche)</div>
+        <div class="chips"><span class="chip set">3 × 20-30 sec</span><span class="chip">repos 45 s</span></div>
+        <ul class="cues">
+          <li>Sur les avant-bras, corps bien droit, ventre serré</li>
+          <li>Ne creuse pas le dos — tiens la position, respire</li>
+        </ul>
+        <a class="demo" target="_blank" href="https://www.youtube.com/results?search_query=gainage+planche+débutant+technique"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>Voir la démo</a>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ================= CONSEILS ================= -->
+<section class="panel" id="conseils">
+  <div class="wrap">
+  <h2 class="conseils-h">Le reste, tout aussi important</h2>
+
+  <div class="block">
+    <h3><span class="dot" style="background:var(--amber)"></span>Cardio &amp; marche — le moteur de la perte de gras</h3>
+    <ul>
+      <li><b>Cardio doux 2 à 3×/semaine</b>, 15 à 25 min : vélo ou vélo elliptique. Doux pour les genoux — <b>pas de course à pied</b>. À faire en fin de séance ou les jours de repos.</li>
+      <li><b>Allure « conversation »</b> : tu dois pouvoir parler en pédalant. Ni trop mou, ni essoufflé.</li>
+      <li><b>Marche tous les jours</b> — le plus simple et le plus efficace. Vise 7 000 à 8 000 pas. C'est ça qui fait fondre le gras sur la durée.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3><span class="dot" style="background:var(--brand)"></span>Comment progresser (sans se blesser)</h3>
+    <ul>
+      <li><b>2 premières semaines : léger.</b> L'objectif est d'apprendre le mouvement et de sentir le muscle, pas de soulever lourd.</li>
+      <li><b>La règle simple :</b> quand tes 3 séries passent proprement et sans forcer, ajoute un petit peu de charge la fois d'après.</li>
+      <li><b>Garde toujours 2-3 reps en réserve.</b> Tu ne vas jamais jusqu'à l'échec. Terminer « en pouvant encore faire un peu » = parfait.</li>
+      <li><b>Respire :</b> souffle pendant l'effort, inspire au retour. Ne bloque jamais la respiration.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3><span class="dot" style="background:var(--legs)"></span>Tes genoux — les points clés</h3>
+    <ul>
+      <li>Sur la presse : <b>mi-amplitude</b> (arrête vers 90°), pousse sur les <b>talons</b>, ne bloque pas les genoux en haut.</li>
+      <li><b>Aucune douleur articulaire</b> ne doit apparaître. Une gêne qui « pince » = tu réduis l'amplitude ou la charge, ou tu passes l'exercice.</li>
+      <li>J'ai volontairement <b>retiré squats, fentes et sauts</b> : inutiles et trop exigeants pour tes genoux au démarrage. On construira dessus plus tard si tout va bien.</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <h3><span class="dot" style="background:var(--push)"></span>Côté alimentation (l'essentiel)</h3>
+    <ul>
+      <li><b>Des protéines à chaque repas</b> (œufs, poisson, viande, laitages) — c'est le carburant du muscle.</li>
+      <li><b>Des légumes à volonté</b>, et on réduit le sucre et le grignotage. Rien d'extrême.</li>
+      <li>Pas besoin de régime strict : le muscle qu'on construit + la marche font le travail. Gabriel peut te faire un guide nutrition à part si tu veux.</li>
+    </ul>
+  </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Programme sur-mesure · Remise en forme · 55 ans · 3 séances/semaine<br>
+    Commence doucement, sois régulier — la régularité bat l'intensité. <span class="heart">♥</span></p>
+  </div>
+</footer>
+
+
+<button id="langbtn" aria-label="Traduire / Translate">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+<span id="langlbl">EN</span>
+</button>
+<script>
+(function(){
+const FR2EN={"Remise en forme · Salle de sport": "Getting back in shape · Gym", "Ton programme,": "Your program,", "séance après séance.": "session after session.", "Un plan simple et progressif pour reconstruire du muscle, perdre du gras et retrouver la forme. Tout sur machines guidées — chaque exercice est illustré, avec une vidéo si tu veux voir le mouvement en vrai.": "A simple, progressive plan to rebuild muscle, lose fat and get back in shape. All on guided machines — every exercise is illustrated, with a video if you want to see the movement for real.", "55 ans": "55 years old", "on reprend en douceur": "easing back in", "3 séances": "3 sessions", "par semaine": "per week", "Genoux ménagés": "Knee-friendly", "zéro exercice qui force": "nothing that strains them", "La semaine type": "A typical week", "3 séances, jamais deux jours de suite. Le corps se construit pendant le repos.": "3 sessions, never two days in a row. The body is built during rest.", "Lun": "Mon", "Mer": "Wed", "Ven": "Fri", "Pousser": "Push", "Tirer": "Pull", "Jambes": "Legs", "Mardi, jeudi, week-end : repos ou marche. Les jours peuvent bouger — garde juste un jour de repos entre chaque séance.": "Tuesday, Thursday, weekend: rest or walking. The days can shift — just keep one rest day between each session.", "Échauffement": "Warm-up", "8 à 10 min · avant chaque séance ·": "8 to 10 min · before every session ·", "non négociable": "non-negotiable", "À 55 ans, l'échauffement évite la grande majorité des blessures. Ces 10 minutes protègent tout le reste — on ne les saute jamais, même pressé. Un muscle froid se blesse, un muscle réveillé travaille.": "At 55, warming up prevents the vast majority of injuries. These 10 minutes protect everything else — never skip them, even when in a hurry. A cold muscle gets injured, a primed muscle performs.", "Faire monter le moteur": "Get the engine going", "de vélo ou vélo elliptique tranquille. Le corps chaud = muscles souples et articulations lubrifiées. Doux pour les genoux.": "of easy bike or elliptical. A warm body = supple muscles and lubricated joints. Gentle on the knees.", "Réveiller les articulations": "Wake up the joints", "Quelques mouvements doux, sans charge (~2 min) :": "A few gentle movements, no load (~2 min):", "Cercles de bras — 10 vers l'avant, 10 vers l'arrière": "Arm circles — 10 forward, 10 backward", "Rotations des épaules — 10 de chaque côté": "Shoulder rolls — 10 each side", "Rotations du bassin — 10 de chaque côté": "Hip rotations — 10 each side", "Balancier de jambe, en tenant un appui — 10 par jambe": "Leg swings, holding a support — 10 per leg", "Activer à l'élastique": "Activate with the band", "3 mouvements courts avec le petit élastique de la salle (~3 min). C'est ça qui « allume » les muscles stabilisateurs et blinde tes épaules et tes genoux avant de charger.": "Three short movements with the gym's small band (~3 min). This is what “switches on” the stabilizer muscles and protects your shoulders and knees before loading.", "ÉLASTIQUE 1": "BAND 1", "ÉLASTIQUE 2": "BAND 2", "ÉLASTIQUE 3": "BAND 3", "Écarté à l'élastique (pull-apart)": "Band pull-apart", "2 séries × 15": "2 sets × 15", "tous les jours": "every day", "Bras tendus devant, écarte les mains en tirant l'élastique vers la poitrine": "Arms out front, pull the band apart toward your chest", "Serre les omoplates, reviens en contrôle": "Squeeze the shoulder blades, return under control", "Réveille les épaules et le haut du dos avant de pousser/tirer": "Wakes up shoulders and upper back before pushing/pulling", "Voir la démo": "Watch demo", "Rotation externe de l'épaule": "Shoulder external rotation", "2 × 12 / bras": "2 × 12 / arm", "surtout Push & Pull": "esp. Push & Pull", "Coude collé au corps, plié à 90°": "Elbow tucked at your side, bent 90°", "Tourne l'avant-bras vers l'extérieur, lentement, puis reviens": "Rotate the forearm outward, slowly, then return", "Prépare la coiffe des rotateurs — la clé des épaules sans douleur": "Preps the rotator cuff — the key to pain-free shoulders", "Abduction de hanche à l'élastique": "Banded hip abduction", "surtout Jambes": "esp. Legs", "Élastique juste au-dessus des genoux": "Band just above the knees", "Écarte les genoux contre la résistance (assis ou debout), ou fais quelques pas de côté": "Push the knees apart against the band (seated or standing), or take a few side steps", "Active les fessiers = hanches et genoux stables et protégés": "Activates the glutes = stable, protected hips and knees", "Pectoraux · épaules · triceps": "Chest · shoulders · triceps", "Échauffement complet obligatoire": "Full warm-up required", "avant de commencer — surtout l'écarté et les rotations d'épaule à l'élastique.": "before starting — especially the band pull-apart and shoulder rotations.", "Voir la section échauffement ↑": "See the warm-up section ↑", "EXERCICE 1": "EXERCISE 1", "EXERCICE 2": "EXERCISE 2", "EXERCICE 3": "EXERCISE 3", "EXERCICE 4": "EXERCISE 4", "EXERCICE 5": "EXERCISE 5", "Développé poitrine à la machine": "Machine chest press", "3 séries × 12": "3 sets × 12", "repos 90 s": "90 s rest", "repos 60 s": "60 s rest", "repos 45 s": "45 s rest", "Assis, dos bien calé contre le dossier": "Seated, back firmly against the pad", "Pousse les poignées vers l'avant sans bloquer les coudes": "Push the handles forward without locking the elbows", "Reviens lentement, sens le pectoraux travailler": "Return slowly, feel the chest working", "Développé épaules à la machine": "Machine shoulder press", "Assis, pousse les poignées vers le haut": "Seated, press the handles upward", "Mouvement lent, sans à-coups": "Slow movement, no jerking", "Ne monte pas les épaules vers les oreilles": "Don't shrug your shoulders toward your ears", "Écarté à la machine (pec deck)": "Machine fly (pec deck)", "3 séries × 15": "3 sets × 15", "Rapproche les poignées devant toi, coudes légèrement fléchis": "Bring the handles together in front, elbows slightly bent", "Serre les pectoraux au centre, puis reviens en contrôle": "Squeeze the chest at the center, then return under control", "Élévations latérales (haltères)": "Lateral raises (dumbbells)", "léger": "light", "Debout, monte les bras sur les côtés jusqu'à l'horizontale": "Standing, raise your arms out to the sides to horizontal", "Haltères légers — c'est un exercice de finition, pas de force": "Light dumbbells — this is a finishing exercise, not a strength one", "Extension triceps à la poulie (corde)": "Triceps pushdown (rope)", "Coudes collés au corps, pousse la corde vers le bas": "Elbows tucked at your sides, push the rope down", "Tends bien les bras en bas, remonte lentement": "Fully extend at the bottom, return slowly", "Dos · biceps · arrière des épaules": "Back · biceps · rear shoulders", "avant d'attaquer — surtout l'écarté et les rotations d'épaule à l'élastique pour préparer le dos.": "before starting — especially the band pull-apart and shoulder rotations to prep the back.", "Tirage vertical à la poulie": "Lat pulldown", "Assis, tire la barre vers le haut de la poitrine": "Seated, pull the bar to your upper chest", "Descends les épaules, serre les omoplates": "Drop your shoulders, squeeze the shoulder blades", "Remonte la barre lentement, bras tendus": "Let the bar rise slowly, arms extended", "Rowing assis à la poulie": "Seated cable row", "Dos droit, tire la poignée vers le ventre": "Back straight, pull the handle to your belly", "Ramène les coudes en arrière, serre le dos": "Draw the elbows back, squeeze the back", "Ne te penche pas en arrière, reste stable": "Don't lean back, stay stable", "Oiseau à la machine (reverse)": "Reverse fly (machine)", "Écarte les bras vers l'arrière, coudes hauts": "Open the arms backward, elbows high", "Travaille l'arrière des épaules et le haut du dos": "Works the rear shoulders and upper back", "Curl biceps (haltères)": "Biceps curl (dumbbells)", "Coudes fixes le long du corps, monte les haltères": "Elbows fixed at your sides, curl the dumbbells up", "Descends lentement, bras presque tendus": "Lower slowly, arms almost straight", "Curl marteau (haltères)": "Hammer curl (dumbbells)", "Comme le curl, mais paumes face à face (prise marteau)": "Like the curl, but palms facing each other (hammer grip)", "Travaille l'avant-bras et l'épaisseur du bras": "Works the forearm and arm thickness", "Cuisses · ischios · mollets · fessiers —": "Quads · hamstrings · calves · glutes —", "genoux ménagés": "knee-friendly", "— surtout l'abduction de hanche à l'élastique + 5 min de vélo pour préparer les genoux en douceur.": "— especially the banded hip abduction + 5 min of bike to gently prep the knees.", "Presse à cuisses (leg press)": "Leg press", "genoux : mi-amplitude": "knees: half-range", "Ne descends pas trop bas — arrête vers 90° aux genoux": "Don't go too low — stop around 90° at the knees", "Pousse avec les talons, ne bloque pas les genoux en haut": "Push through your heels, don't lock the knees at the top", "Aucune douleur : si ça pince, réduis l'amplitude": "No pain: if it pinches, reduce the range", "Leg curl (ischio-jambiers)": "Leg curl (hamstrings)", "Allongé ou assis, ramène le talon vers les fesses": "Lying or seated, bring your heel toward your glutes", "Mouvement lent — travaille l'arrière de la cuisse": "Slow movement — works the back of the thigh", "Équilibre le genou en renforçant l'arrière": "Balances the knee by strengthening the back", "Abducteurs à la machine": "Hip abductor machine", "Assis, écarte les genoux vers l'extérieur contre la résistance": "Seated, push your knees outward against the resistance", "Renforce les fessiers et stabilise les hanches — doux pour les genoux": "Strengthens glutes and stabilizes the hips — gentle on the knees", "Extension mollets": "Calf raises", "3 séries × 20": "3 sets × 20", "Monte sur la pointe des pieds, le plus haut possible": "Rise onto your toes, as high as possible", "Redescends lentement, bien étirer en bas": "Lower slowly, stretch well at the bottom", "Gainage (planche)": "Plank", "Sur les avant-bras, corps bien droit, ventre serré": "On your forearms, body straight, core braced", "Ne creuse pas le dos — tiens la position, respire": "Don't let your back sag — hold the position, breathe", "Le reste, tout aussi important": "The rest, just as important", "Cardio & marche — le moteur de la perte de gras": "Cardio & walking — the engine of fat loss", "Cardio doux 2 à 3×/semaine": "Easy cardio 2 to 3×/week", ", 15 à 25 min : vélo ou vélo elliptique. Doux pour les genoux —": ", 15 to 25 min: bike or elliptical. Gentle on the knees —", "pas de course à pied": "no running", ". À faire en fin de séance ou les jours de repos.": ". Do it after your session or on rest days.", "Allure « conversation »": "“Conversation” pace", ": tu dois pouvoir parler en pédalant. Ni trop mou, ni essoufflé.": ": you should be able to talk while pedaling. Not too easy, not out of breath.", "Marche tous les jours": "Walk every day", "— le plus simple et le plus efficace. Vise 7 000 à 8 000 pas. C'est ça qui fait fondre le gras sur la durée.": "— the simplest and most effective. Aim for 7,000 to 8,000 steps. That's what melts fat over time.", "Comment progresser (sans se blesser)": "How to progress (without getting hurt)", "2 premières semaines : léger.": "First 2 weeks: light.", "L'objectif est d'apprendre le mouvement et de sentir le muscle, pas de soulever lourd.": "The goal is to learn the movement and feel the muscle, not to lift heavy.", "La règle simple :": "The simple rule:", "quand tes 3 séries passent proprement et sans forcer, ajoute un petit peu de charge la fois d'après.": "when your 3 sets go cleanly and without straining, add a little weight next time.", "Garde toujours 2-3 reps en réserve.": "Always keep 2-3 reps in reserve.", "Tu ne vas jamais jusqu'à l'échec. Terminer « en pouvant encore faire un peu » = parfait.": "Never go to failure. Finishing “able to do a bit more” = perfect.", "Respire :": "Breathe:", "souffle pendant l'effort, inspire au retour. Ne bloque jamais la respiration.": "exhale during the effort, inhale on the way back. Never hold your breath.", "Tes genoux — les points clés": "Your knees — the key points", "Sur la presse :": "On the leg press:", "mi-amplitude": "half-range", "(arrête vers 90°), pousse sur les": "(stop around 90°), push through your", "talons": "heels", ", ne bloque pas les genoux en haut.": ", don't lock the knees at the top.", "Aucune douleur articulaire": "No joint pain", "ne doit apparaître. Une gêne qui « pince » = tu réduis l'amplitude ou la charge, ou tu passes l'exercice.": "should appear. A “pinching” discomfort = reduce the range or the load, or skip the exercise.", "J'ai volontairement": "I deliberately", "retiré squats, fentes et sauts": "left out squats, lunges and jumps", ": inutiles et trop exigeants pour tes genoux au démarrage. On construira dessus plus tard si tout va bien.": ": unnecessary and too demanding for your knees at the start. We'll build on it later if all goes well.", "Côté alimentation (l'essentiel)": "Nutrition (the essentials)", "Des protéines à chaque repas": "Protein at every meal", "(œufs, poisson, viande, laitages) — c'est le carburant du muscle.": "(eggs, fish, meat, dairy) — it's the fuel for muscle.", "Des légumes à volonté": "Vegetables freely", ", et on réduit le sucre et le grignotage. Rien d'extrême.": ", and cut back on sugar and snacking. Nothing extreme.", "Pas besoin de régime strict : le muscle qu'on construit + la marche font le travail. Gabriel peut te faire un guide nutrition à part si tu veux.": "No strict diet needed: the muscle you build + walking do the work. Gabriel can make you a separate nutrition guide if you want.", "Programme sur-mesure · Remise en forme · 55 ans · 3 séances/semaine": "Custom program · Getting back in shape · 55 years old · 3 sessions/week", "Commence doucement, sois régulier — la régularité bat l'intensité.": "Start easy, stay consistent — consistency beats intensity."};
+Object.assign(FR2EN,{"Ma Forme": "My Fitness", "3 séances/semaine · genoux ménagés · pensé pour reprendre en douceur": "3 sessions/week · knee-friendly · designed for an easy comeback", "Lun Pousser · Mer Tirer · Ven Jambes — un jour de repos entre chaque": "Mon Push · Wed Pull · Fri Legs — one rest day between each", "Conseils": "Tips", "Échauff.": "Warm-up", "Cercles de bras": "Arm circles", "Rotations de la tête": "Head rotations", "Rotations des épaules": "Shoulder rolls", "Rotations du bassin": "Hip rotations", "Balancier de jambe": "Leg swings", "10 avant · 10 arrière": "10 fwd · 10 back", "5 de chaque côté": "5 each side", "10 de chaque côté": "10 each side", "10 par jambe": "10 per leg"});
+const origs=new Map(); let lang='fr';
+const btn=document.getElementById('langbtn'), lbl=document.getElementById('langlbl');
+function walk(fn){
+  const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,{acceptNode(n){
+    if(!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;
+    const p=n.parentNode&&n.parentNode.nodeName;
+    if(p==='SCRIPT'||p==='STYLE'||p==='BUTTON')return NodeFilter.FILTER_REJECT;
+    return NodeFilter.FILTER_ACCEPT;
+  }});
+  let n; while(n=w.nextNode())fn(n);
+}
+function toEN(){
+  walk(function(n){
+    const raw=n.nodeValue, key=raw.trim();
+    if(FR2EN[key]!==undefined){
+      if(!origs.has(n))origs.set(n,raw);
+      const lead=(raw.match(/^\s*/)||[''])[0], trail=(raw.match(/\s*$/)||[''])[0];
+      n.nodeValue=lead+FR2EN[key]+trail;
+    }
+  });
+  document.documentElement.lang='en'; document.title='My Fitness — Program'; lbl.textContent='FR'; lang='en';
+}
+function toFR(){
+  origs.forEach(function(raw,n){n.nodeValue=raw;});
+  document.documentElement.lang='fr'; document.title='Ma Forme — Programme'; lbl.textContent='EN'; lang='fr';
+}
+btn.addEventListener('click',function(){ lang==='fr'?toEN():toFR(); });
+})();
+</script>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  function show(id){
+    tabs.forEach(function(t){t.classList.toggle('active',t.getAttribute('data-tab')===id);});
+    panels.forEach(function(p){p.classList.toggle('active',p.id===id);});
+    window.scrollTo(0,0);
+    var at=tabs.filter(function(t){return t.getAttribute('data-tab')===id;})[0];
+    if(at&&at.scrollIntoView){try{at.scrollIntoView({inline:'center',block:'nearest'});}catch(e){}}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();show(t.getAttribute('data-tab'));});});
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    var id=a.getAttribute('href').slice(1);
+    if(panels.some(function(p){return p.id===id;})){a.addEventListener('click',function(e){e.preventDefault();show(id);});}
+  });
+})();
+</script>
+</body>
+</html>
